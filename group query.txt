@@ -1,0 +1,175 @@
+    1. Contare quanti iscritti ci sono stati ogni anno
+
+SELECT YEAR(enrolment_date) AS anno, COUNT(*) as numero_studenti
+FROM students
+GROUP BY YEAR(enrolment_date)
+order by anno;
+
+[2018	912
+2019	1709
+2020	1645
+2021	734]
+
+    2 Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+
+SELECT office_address as posizione, count(*) as numero_professori
+from teachers
+GROUP BY office_address
+order by position;
+
+[Borgo Demis 1	1
+Borgo Elga 89	8
+Borgo Elio 234 Piano 4	4
+Borgo Ippolito 5 Piano 5	1
+Borgo Martino 82 Appartamento 07	3
+Contrada Amato 58 Piano 2	5
+Contrada Penelope 73	4
+Contrada Rita 5 Appartamento 71	3
+Contrada Santoro 17 Appartamento 30	3
+Incrocio Marini 9	3
+Incrocio Testa 142 Piano 7	2
+Piazza Aroldo 8 Appartamento 85	1
+Piazza Demian 856 Appartamento 63	3
+Piazza Ferretti 619	3
+Piazza Pellegrino 613 Piano 8	2
+Rotonda Carmela 10 Piano 1	6
+Rotonda Martinelli 309	9
+Rotonda Teseo 9	2
+Strada Concetta 6	3
+Strada Kociss 997 Piano 8	5
+Strada Lino 8	1
+Strada Lombardi 855	3
+Strada Neri 577	3
+Strada Vitali 8 Piano 0	5
+Via Elga 7 Piano 4	1
+Via Eusebio 167 Appartamento 28	6
+Via Giacinto 11 Piano 8	3
+Via Maika 491	3
+Via Mariano 48	4]
+
+
+    3. Calcolare la media dei voti di ogni appello d'esame
+
+SELECT vote AS voto, COUNT(*) AS voti_per_esame
+FROM exam_student
+GROUP BY vote
+ORDER BY voto;
+
+[
+3	1374
+4	1347
+5	1353
+6	1404
+7	1371
+8	1378
+9	1418
+10	1376
+11	1372
+12	1379
+13	1372
+14	1354
+15	1436
+16	1376
+17	1387
+18	1413
+19	1353
+20	1426
+21	1406
+22	1349
+23	1388
+24	1345
+25	1311
+26	1328
+27	1395
+28	1354
+29	1357
+30	1361
+31	1337
+32	1402
+33	1355
+]
+
+    4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+
+SELECT degree_id, COUNT(*) AS numero_corsi
+FROM courses
+GROUP BY degree_id
+ORDER BY degree_id;
+
+(?)
+
+[1	19
+2	26
+3	20
+4	19
+5	14
+6	11
+7	14
+8	15
+9	13
+10	18
+11	17
+12	22
+13	13
+14	13
+15	22
+16	20
+17	22
+18	17
+19	22
+20	21
+21	19
+22	22
+23	12
+24	16
+25	12
+26	15
+27	11
+28	20
+29	22
+30	11
+31	17
+32	23
+33	18
+34	24
+35	21
+36	12
+37	16
+38	21
+39	23
+40	21
+41	20
+42	22
+43	23
+44	18
+45	19
+46	20
+47	21
+48	20
+49	15
+50	16
+51	18
+52	14
+53	22
+54	15
+55	15
+56	13
+57	15
+58	18
+59	17
+60	22
+61	14
+62	11
+63	13
+64	13
+65	13
+66	17
+67	23
+68	13
+69	22
+70	25
+71	16
+72	15
+73	14
+74	16
+75	15]
